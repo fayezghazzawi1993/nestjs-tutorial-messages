@@ -2,7 +2,7 @@ import { readFile, writeFile } from 'fs/promises';
 
 export class MessagesRepository {
   async findOne(id: string) {
-    const contents = await readFile('messages.js', 'utf8');
+    const contents = await readFile('messages.json', 'utf8');
 
     const messages = JSON.parse(contents);
 
@@ -10,7 +10,7 @@ export class MessagesRepository {
   }
 
   async findAll() {
-    const contents = await readFile('messages.js', 'utf8');
+    const contents = await readFile('messages.json', 'utf8');
 
     return JSON.parse(contents);
   }
